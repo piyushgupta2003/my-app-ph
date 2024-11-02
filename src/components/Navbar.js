@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+//a->Link , href-> to
 
 export default function Navbar(props) {
   return (
@@ -41,7 +42,7 @@ export default function Navbar(props) {
               </Link>
               </li>
               <li className="nav-item">
-              <Link className="nav-link disabled" aria-disabled="true">
+              <Link className="nav-link disabled" aria-disabled="true" to="/">
                 Disabled
               </Link>
               </li>

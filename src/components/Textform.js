@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function Textform(props) {
-  const [text, setText] = useState("Enter the text here");
+  const [text, setText] = useState("");
   // text = "new text"; wrong way
   //setText('new text'); right way
   const handelUpClick = () => {
@@ -26,9 +26,7 @@ export default function Textform(props) {
   };
 
   const copyText = () => {
-    var text = document.getElementById("myBox");
-    text.select();
-    navigator.clipboard.writeText(text.value);
+    navigator.clipboard.writeText(text);
     props.showAlert(' Text copied','warning');
 
   };
@@ -64,6 +62,7 @@ export default function Textform(props) {
         </div>
 
         <button
+        disabled ={text.length===0}
           type="ConvertToUperCase"
           className="btn btn-primary my-3 mx-1"
           onClick={handelUpClick}
@@ -71,6 +70,7 @@ export default function Textform(props) {
           ConvertToUperCase
         </button>
         <button
+          disabled ={text.length===0}
           type="ConvertToLowerCase"
           className="btn btn-secondary my-3 mx-1"
           onClick={handelDownClick}
@@ -78,6 +78,7 @@ export default function Textform(props) {
           ConvertToLowerCase
         </button>
         <button
+          disabled ={text.length===0}
           type="ConvertToLowerCase"
           className="btn btn-success my-3 mx-1"
           onClick={clear}
@@ -85,6 +86,7 @@ export default function Textform(props) {
           Clear
         </button>
         <button
+          disabled ={text.length===0}
           type="ConvertToLowerCase"
           className="btn btn-danger my-3 mx-1"
           onClick={copyText}
@@ -92,6 +94,7 @@ export default function Textform(props) {
           CopyText
         </button>
         <button
+          disabled ={text.length===0}
           type="ConvertToLowerCase"
           className="btn btn-dark my-3 mx-1"
           onClick={removeExtraSpace}

@@ -7,7 +7,6 @@ import Alert from './components/Alert';
 import About from './components/About';
 import {
   BrowserRouter  ,
-  Switch,
   Route,
   Routes
 } from "react-router-dom";
